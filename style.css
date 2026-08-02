@@ -178,3 +178,13 @@ details li{margin:10px 0;}
                  font-size:30px;}
 .trip-date{color:#222;
            margin-bottom:10px;}
+
+/*スマホ画面表示設定*/
+@media screen and (max-width: 768px) {
+    header{width:100%;padding:20px 15px;}
+    h1{font-size:40px;}
+    nav ul{gap:20px;flex-wrap:wrap;}
+    .container{width:95%;margin:20px auto;}
+    .trip-card{width:100%;}
+    .trip-card img{width:100%;height:auto;}
+}
