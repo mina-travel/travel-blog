@@ -197,4 +197,5 @@ details li{margin:10px 0;}
     .trip-card{width:100%;}
     .trip-card img{width:100%;height:auto;}
     p {font-size:17px;line-height:1.8;}
+    article p{text-align:left;font-size:17px;line-height:1.8;}
 }
