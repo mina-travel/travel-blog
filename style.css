@@ -22,7 +22,9 @@ p {font-size: 20px;
    color: #555;}
 
 /* 写真関連 */   
-img {width: 300px;
+img {width: 100%;
+     max-width:300px;
+     height:auto;
      border-radius: 12px;}
 
 .article-image{width:100%;
@@ -189,4 +191,18 @@ details li{margin:10px 0;}
     .container{width:95%;margin:20px auto;}
     .trip-card{width:100%;}
     .trip-card img{width:100%;height:auto;}
+}
+
+@media screen and (max-width:768px){
+    h1{font-size:32px;margin:10px 0;}
+    h2{font-size:24px;}
+    p{font-size:16px;}
+    header{padding:15px;}
+    nav{gap:15px;font-size:16px;flex-wrap:wrap;}
+    main{width:92%;padding:25px;margin:20px auto;}
+    img{width:100%;height:auto;}
+    .trip-card{width:100%;}
+    .travel-page{flex-direction:column;}
+    .category{width:100%;border-right:none;border-bottom:1px solid #d9d3c8;padding:0 0 20px;margin-bottom:20px;}
+    .notes{padding-left:0;}
 }
