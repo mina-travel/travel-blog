@@ -35,7 +35,8 @@ header {padding:20px 20px;width:100%;
         background-color: #b94047;
         border-bottom: 5px solid #213a70;}
 
-main{width:800px;
+main{width:90%;
+     max-width:800px;
      margin:50px auto;
      background:white;
      padding:70px;
@@ -181,6 +182,7 @@ details li{margin:10px 0;}
 
 /*スマホ画面表示設定*/
 @media screen and (max-width: 768px) {
+    main{width:92%;padding:25px;margin:20px auto;}
     header{width:100%;padding:20px 15px;}
     h1{font-size:40px;}
     nav ul{gap:20px;flex-wrap:wrap;}
