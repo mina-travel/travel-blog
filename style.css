@@ -182,7 +182,7 @@ details li{margin:10px 0;}
 
 /*スマホ画面表示設定*/
 @media screen and (max-width: 768px) {
-    main{width:100%;padding:25px;margin:20px auto;}
+    main{width:95%;padding:25px;margin:20px auto;}
     header{width:100%;padding:20px 15px;}
     h1{font-size:40px;}
     nav ul{gap:20px;flex-wrap:wrap;}
