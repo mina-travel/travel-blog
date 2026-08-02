@@ -190,4 +190,6 @@ details li{margin:10px 0;}
     .trip-card{width:100%;}
     .trip-card img{width:100%;height:auto;}
     .article-image{width:100%;border-radius:10px;}
+    .trip-info{width:100%;max-width:320px;margin:40px auto;padding:30px 20px 20px;}
+    .masking-tape{width:80px;height:22px;top:-10px;}
 }
