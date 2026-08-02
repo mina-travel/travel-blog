@@ -28,7 +28,7 @@ img {width: 40%;
 .wide-photo{width:70%;
             max-width:700px;
             display:block;
-            margin:5px auto;
+            margin: 0px auto;
             border-radius:12px;} 
 
 .article-image{width:100%;
@@ -188,7 +188,8 @@ details li{margin:10px 0;}
            margin-bottom:10px;}
 
 /*スマホ画面表示設定*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) 
+{
     main{width:95%;padding:25px 15px;margin:20px auto;}
     header{width:100%;padding:20px 15px;}
     h1{font-size:40px;}
