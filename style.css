@@ -25,6 +25,12 @@ p {font-size: 20px;
 img {width: 40%;
      border-radius: 12px;}
 
+.wide-photo{width:70%;
+            max-width:700px;
+            display:block;
+            margin:5px auto;
+            border-radius:12px;} 
+
 .article-image{width:100%;
                max-width:700px;
                display:block;
@@ -141,7 +147,7 @@ details li{margin:10px 0;}
 
 .time-label{display: inline-block;
             position: relative;
-            margin: 35px 0 20px;
+            margin: 35px 0px 20px;
             padding: 12px 35px;
             justify-content: center;
             align-items: center;   /* ← 縦方向の中央揃え */
@@ -190,5 +196,5 @@ details li{margin:10px 0;}
     .container{width:95%;margin:20px auto;}
     .trip-card{width:100%;}
     .trip-card img{width:100%;height:auto;}
-    p {font-size:15px;}
+    p {font-size:17px;line-height:1.8;}
 }
