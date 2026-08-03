@@ -146,13 +146,12 @@ details li{margin:10px 0;}
 
 .category a:hover{color:#b94047;}
 
-.time-label{display: inline-block;
+.time-label{display: inline-flex;
             position: relative;
             margin: 35px 0px 20px;
             padding: 12px 35px;
             justify-content: center;
             align-items: center;   /* ← 縦方向の中央揃え */
-            height: 30px;
 
     /* 方眼紙 */
     background-color: #b94047;
