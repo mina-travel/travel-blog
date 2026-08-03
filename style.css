@@ -129,6 +129,8 @@ details li{margin:10px 0;}
 
 .notes{flex:1;padding-left:30px;}
 
+.notes img{width: 80%;border-radius: 12px;}
+
 .category details{margin:20px 0;}
 
 .category summary{
