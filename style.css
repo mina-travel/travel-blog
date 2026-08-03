@@ -201,5 +201,8 @@ details li{margin:10px 0;}
     article p{text-align:left;font-size:17px;line-height:1.8;}
     .trip-info {position: relative;width: 70%;margin: 80px auto;}
     .trip-info p {text-align: center;}
+    .latest article{width: 90%;padding: 20px;}
+    .latest article img{width: 100%;height: auto;}
+    .latest h2{font-size: 28px;}
     .latest{text-align: center;}
 }
