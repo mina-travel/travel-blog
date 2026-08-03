@@ -1,3 +1,4 @@
+*{box-sizing: border-box;}
 body {margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
@@ -190,7 +191,7 @@ details li{margin:10px 0;}
 /*スマホ画面表示設定*/
 @media screen and (max-width: 768px) 
 {
-    main{width:90%;padding:25px 20px 25px 20px;margin:80px auto;}
+    main{width:90%;margin:30px auto;padding:25px 15px}
     header{width:100%;padding:20px 15px;}
     h1{font-size:35px;}
     nav ul{gap:20px;flex-wrap:wrap;}
