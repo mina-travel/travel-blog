@@ -204,4 +204,5 @@ details li{margin:10px 0;}
     .latest article{width: 90%;padding: 20px;text-align: center;}
     .latest article img{width: 100%;height: auto;}
     .latest h2{font-size: 28px;}
+    .time-label{display: inline-block;max-width: 90%;padding: 10px 20px;}
 }
