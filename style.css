@@ -194,6 +194,7 @@ details li{margin:10px 0;}
     main{width:90%;margin:30px auto;padding:25px 15px}
     header{width:100%;padding:20px 15px;}
     h1{font-size:30px;}
+    h2{font-size:26px;}
     nav ul{gap:20px;flex-wrap:wrap;}
     .container{width:95%;margin:20px auto;}
     .trip-card{width:100%;}
@@ -206,4 +207,7 @@ details li{margin:10px 0;}
     .latest article img{width: 100%;height: auto;}
     .latest h2{font-size: 28px;}
     .time-label{display: inline-block;max-width: 90%;padding: 10px 20px;}
+    .travel-page{display: flex;gap: 15px;}
+    .category{width: 35%;padding-right: 15px;}
+    .notes{width: 65%;padding-left: 15px;}
 }
