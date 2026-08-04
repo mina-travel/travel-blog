@@ -218,4 +218,6 @@ details li{margin:10px 0;}
     .travel-page{display: flex;gap: 15px;}
     .category{width: 35%;padding-right: 15px;}
     .notes{width: 65%;padding-left: 15px;}
+    .note-navigation{gap: 15px;}
+    .note-navigation a{padding: 14px 28px;font-size: 18px;}
 }
