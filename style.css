@@ -23,6 +23,12 @@ h3{color: #555;
 p {font-size: 20px;
    color: #555;}
 
+.post-navigation{display: flex;
+                 justify-content: space-between;
+                 width: 80%;
+                 margin: 60px auto;}
+.next-only{justify-content: flex-end;}
+
 /* 写真関連 */   
 img {width: 40%;
      border-radius: 12px;}
