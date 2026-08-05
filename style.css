@@ -145,6 +145,8 @@ details li{margin:10px 0;}
     font-weight:bold;
     font-size:20px;}
 
+.category summary:hover{color: #b94047;}
+
 .category ul{list-style:none;padding-left:15px;}
 
 .category li{margin:10px 0;}
@@ -177,7 +179,7 @@ details li{margin:10px 0;}
 
 /*カテゴリー内のカード*/
 .trip-card{width: 500px;
-           margin: 50px auto;
+           margin: 0px;
            background: white;
            border-radius: 12px;
            overflow: hidden;
@@ -195,6 +197,12 @@ details li{margin:10px 0;}
                  font-size:30px;}
 .trip-date{color:#222;
            margin-bottom:10px;}
+
+#trip-list {display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px auto;}
 
 /*スマホ画面表示設定*/
 @media screen and (max-width: 768px) 

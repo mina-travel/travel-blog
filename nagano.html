@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-prefecture="長野">
     <header>
      <h1>ミナの旅記録ノート</h1>
 
@@ -19,15 +19,11 @@
      </nav>
     </header>
 
- <a href="travel-2.html" class="trip-card">   
-  <div class="trip-card">
-    <div class="trip-content">
-     <img src="images/nagano-19.jpg" alt="長野旅行">
-        <p class="trip-date">
-            ［旅記録 #2］<br>
-            2025.09.18<br>
-            「栗の町"小布施"へ」
-        </p>
+    <div id="trip-list">
+        <!-- JavaScriptがここに記事一覧を表示 -->
     </div>
-  </div>
- </a>
+
+<script src="posts.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

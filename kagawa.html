@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-prefecture="香川">
     <header>
      <h1>ミナの旅記録ノート</h1>
 
@@ -19,15 +19,11 @@
      </nav>
     </header>
 
- <a href="travel-1.html" class="trip-card">   
-  <div class="trip-card">
-    <div class="trip-content">
-     <img src="images/kagawa-1.jpg" alt="香川旅行">
-        <p class="trip-date">
-            ［旅記録 #1］<br>
-            2025.08.23 ～ 24<br>
-            「ご当地グルメ&小豆島の旅」
-        </p>
+    <div id="trip-list">
+        <!-- JavaScriptがここに記事一覧を表示 -->
     </div>
-  </div>
- </a>
+
+<script src="posts.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
