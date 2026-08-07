@@ -178,7 +178,8 @@ details li{margin:10px 0;}
 
 
 /*カテゴリー内のカード*/
-.trip-card{width: 500px;
+.trip-card{display: block;
+           width: 500px;
            margin: 0px;
            background: white;
            border-radius: 12px;
@@ -203,6 +204,23 @@ details li{margin:10px 0;}
             justify-content: center;
             gap: 40px;
             margin: 50px auto;}
+
+#archive-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px auto;
+}
+#archive-posts .trip-card {
+    width: 400px;
+    margin: 0;
+}
+#archive-posts .trip-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
 
 /*スマホ画面表示設定*/
 @media screen and (max-width: 768px) 

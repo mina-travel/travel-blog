@@ -35,5 +35,62 @@ if (tripList) {
         </a>
         `;
     });
+}
 
+const archiveList = document.getElementById("archive-list");
+if (archiveList) {
+    const years = [...new Set(posts.map(post => post.year))];
+    years.forEach(year => {
+        const yearDetails = document.createElement("details");
+        const months = [
+            ...new Set(
+                posts
+                    .filter(post => post.year === year)
+                    .map(post => post.month)
+            )
+        ];
+        let monthList = "";
+        months.forEach(month => {
+            monthList += `
+                <li>
+                    <a href="archive.html?year=${year}&month=${month}">
+                        ${month}月
+                    </a>
+                </li>
+            `;
+        });
+        yearDetails.innerHTML = `
+            <summary>${year}年</summary>
+            <ul>
+                ${monthList}
+            </ul>
+        `;
+        archiveList.appendChild(yearDetails);
+    });
+}
+
+const archivePosts = document.getElementById("archive-posts");
+if (archivePosts) {
+    const params = new URLSearchParams(window.location.search);
+    const year = Number(params.get("year"));
+    const month = Number(params.get("month"));
+    const filteredPosts = posts.filter(post =>
+        post.year === year && post.month === month
+    );
+    const archiveTitle = document.getElementById("archive-title");
+    archiveTitle.textContent = `${year}年${month}月`;
+    filteredPosts.forEach(post => {
+        archivePosts.innerHTML += `
+            <a href="${post.url}" class="trip-card">
+                <div class="trip-content">
+                    <img src="${post.image}" alt="${post.title}">
+                    <p class="trip-date">
+                        ${post.number}<br>
+                        ${post.date}<br>
+                        ${post.title}
+                    </p>
+                </div>
+            </a>
+        `;
+    });
 }
