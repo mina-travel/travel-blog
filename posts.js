@@ -24,4 +24,13 @@ const posts = [{title: "【香川女子旅】<br>「ご当地グルメ&小豆島
                 date: "2025.09.18〜19",
                 description: "前日に急遽思い立ち、長野へ一人旅へ。<br>素敵な出会いが沢山の旅です。",
                 image: "images/nagano-40.jpg",
-                url: "travel-3.html"}];
+                url: "travel-3.html"},
+               {title: "【台湾女子旅 Day1】<br>「台北到着！ドタバタ旅行の幕開け」",
+                number: "［旅記録 #4］",
+                category: "海外",
+                area: "台湾",
+                month: 9,
+                date: "2025.09.28〜30",
+                description: "大学の友達と台湾へ！<br>ドタバタで最高に楽しかった旅の記録です。",
+                image: "images/taiwann-10.jpg",
+                url: "travel-4.html"}];
