@@ -47,4 +47,14 @@ const posts = [{title: "【香川女子旅】<br>「ご当地グルメ&小豆島
                 date: "2025.09.28〜30",
                 description: "大学の友達と台湾へ！<br>ドタバタで最高に楽しかった旅の記録です。",
                 image: "images/taiwann-11.jpg",
-                url: "travel-5.html"}];
+                url: "travel-5.html"},
+               {title: "【台湾女子旅 Day3】<br>「台北で朝ご飯、そして帰国」",
+                number: "［旅記録 #6］",
+                category: "海外",
+                area: "台湾",
+                year: 2025,
+                month: 9,
+                date: "2025.09.28〜30",
+                description: "大学の友達と台湾へ！<br>ドタバタで最高に楽しかった旅の記録です。",
+                image: "images/taiwann-34.jpg",
+                url: "travel-6.html"}];
