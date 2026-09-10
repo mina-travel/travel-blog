@@ -13,8 +13,49 @@ if (latestNote) {
     `;
 }
 
-const tripList = document.getElementById("trip-list");
+const categoryList = document.getElementById("category-list");
+if (categoryList) {
+    // posts.jsからカテゴリーを重複なしで取得
+    const categories = [
+        ...new Set(posts.map(post => post.category))
+    ];
+    categories.forEach(category => {
+        // 「国内」「海外」を作る
+        const categoryDetails = document.createElement("details");
+        // そのカテゴリーの記事だけ取り出す
+        const categoryPosts = posts.filter(
+            post => post.category === category
+        );
+        // そのカテゴリーに含まれる場所を重複なしで取得
+        const areas = [
+            ...new Set(
+                categoryPosts.map(post => post.area)
+            )
+        ];
+        // 都道府県・国のリストを作る
+        let areaList = "";
+        areas.forEach(area => {
+            areaList += `
+                <li>
+                    <a href="area.html?category=${encodeURIComponent(category)}&area=${encodeURIComponent(area)}">
+                        ${area}
+                    </a>
+                </li>
+            `;
+        });
+        // HTMLを作る
+        categoryDetails.innerHTML = `
+            <summary>${category}</summary>
+            <ul>
+                ${areaList}
+            </ul>
+        `;
+        // Categoryの中に追加
+        categoryList.appendChild(categoryDetails);
+    });
+}
 
+const tripList = document.getElementById("trip-list");
 if (tripList) {
     const prefecture =
         document.body.dataset.prefecture;
@@ -84,6 +125,33 @@ if (archivePosts) {
             <a href="${post.url}" class="trip-card">
                 <div class="trip-content">
                     <img src="${post.image}" alt="${post.title}">
+                    <p class="trip-date">
+                        ${post.number}<br>
+                        ${post.date}<br>
+                        ${post.title}
+                    </p>
+                </div>
+            </a>
+        `;
+    });
+}
+
+const areaPosts = document.getElementById("area-posts");
+if (areaPosts) {
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+    const area = params.get("area");
+    const filteredPosts = posts.filter(post =>
+        post.category === category && post.area === area
+    );
+    const areaTitle = document.getElementById("area-title");
+    areaTitle.textContent = area;
+    filteredPosts.forEach(post => {
+        areaPosts.innerHTML += `
+            <a href="${post.url}" class="trip-card">
+                <div class="trip-content">
+                    <img
+                        src="${post.image}" alt="${post.title}">
                     <p class="trip-date">
                         ${post.number}<br>
                         ${post.date}<br>

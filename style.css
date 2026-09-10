@@ -222,6 +222,23 @@ details li{margin:10px 0;}
     object-fit: cover;
 }
 
+#area-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px auto;
+}
+#area-posts .trip-card {
+    width: 400px;
+    margin: 0;
+}
+#area-posts .trip-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
 /*スマホ画面表示設定*/
 @media screen and (max-width: 768px) 
 {
