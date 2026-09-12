@@ -29,7 +29,7 @@ if (categoryList) {
         // そのカテゴリーに含まれる場所を重複なしで取得
         const areas = [
             ...new Set(
-                categoryPosts.map(post => post.area)
+                categoryPosts.flatMap(post => post.areas)
             )
         ];
         // 都道府県・国のリストを作る
@@ -60,7 +60,7 @@ if (tripList) {
     const prefecture =
         document.body.dataset.prefecture;
     const filteredPosts = posts.filter(
-        post => post.area === prefecture
+        post => post.areas.includes(prefecture)
     );
     filteredPosts.forEach(post => {
         tripList.innerHTML += `
@@ -142,7 +142,8 @@ if (areaPosts) {
     const category = params.get("category");
     const area = params.get("area");
     const filteredPosts = posts.filter(post =>
-        post.category === category && post.area === area
+        post.category === category && 
+        post.areas.includes(area)
     );
     const areaTitle = document.getElementById("area-title");
     areaTitle.textContent = area;
