@@ -6,32 +6,61 @@
     <title>ホーム｜ミナの旅記録ノート</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
     <header>
-    <h1>ミナの旅記録ノート</h1>
+    <div class="header-inner">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="travel-notes.html">Travel Notes</a>
-    </nav>
-     </header>
+        <a href="index.html" class="site-title">
+    <span class="plane">✈︎</span>
 
- <main>
-    <h2>旅先での思い出を、ノートに書き留めています。</h2>
+    <span class="title-text">
+        <span class="title-main">ミナの旅記録ノート</span>
+        <span class="title-sub">Travel Blog</span>
+    </span>
+</a>
 
-    <p>国内・海外の旅行記や、その土地で感じたことをゆっくり記録していくブログです。<br><br><br></p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="travel-notes.html">Travel Notes</a>
+        </nav>
 
-    <section class="latest">
-     <h2>Latest Note</h2>
-     <article id="latest-note">
-        <!-- JavaScriptがここに表示 -->
-    </article>
-    </section><br>
-    <p>過去の旅ノートもぜひ覗いてみてください📖<br>
-    上部メニューの「Travel Notes」に、カテゴリー別・年月別に過去のノートをまとめています。</p>
+    </div>
+</header>
+<div class="hero-photo">
+    <img src="images/header-photo.jpeg" alt="旅の風景">
+</div>
+<main class="home-layout">
+    <aside class="home-sidebar">
+        <h2>Category</h2>
+        <div id="category-list">
+            <!-- JavaScriptで自動生成 -->
+        </div>
+        <h2>Archive</h2>
+        <div id="archive-list">
+            <!-- JavaScriptで自動生成 -->
+        </div>
+    </aside>
+
+    <div class="home-main">
+        <section class="latest">
+            <h2>Latest Note</h2>
+            <article id="latest-note">
+                <!-- JavaScriptがここに表示 -->
+            </article>
+        </section>
+        <section class="home-notes">
+            <h2>Travel Notes</h2>
+            <div id="home-note-list"></div>
+        </section>
+    </div>
  </main>
  <script src="posts.js"></script>
  <script src="script.js"></script>

@@ -2,15 +2,66 @@ const latestNote = document.getElementById("latest-note");
 
 if (latestNote) {
     const latest = posts[posts.length - 1];
+
     latestNote.innerHTML = `
-        <img src="${latest.image}" alt="${latest.title}">
-        <h3>${latest.title}</h3>
-        <p>${latest.number}<br>${latest.date}</p>
-        <p>${latest.description}</p>
-        <a href="${latest.url}" class="read-more">
-            Read Note →
-        </a>
+        <div class="latest-content">
+
+            <div class="latest-image">
+                <img src="${latest.image}" alt="${latest.title}">
+            </div>
+
+            <div class="latest-info">
+                <p class="latest-number">${latest.number}</p>
+                <h3>${latest.title}</h3>
+                <p class="latest-date">${latest.date}</p>
+                <p class="latest-description">${latest.description}</p>
+
+                <a href="${latest.url}" class="read-more">
+                    Read Note →
+                </a>
+            </div>
+
+        </div>
     `;
+}
+
+const homeNoteList = document.getElementById("home-note-list");
+
+if (homeNoteList) {
+
+    const latest = posts[posts.length - 1];
+
+    const previousPosts = posts
+        .slice(-4, -1)
+        .reverse();
+
+    homeNoteList.innerHTML = previousPosts.map(post => `
+        <a href="${post.url}" class="trip-card">
+
+            <img src="${post.image}" alt="${post.title}">
+
+            <div class="trip-content">
+
+                <p class="trip-category">
+                    ${post.category} ・ ${post.areas.join("・")}
+                </p>
+
+                <h2>${post.title}</h2>
+
+                <p class="trip-date">
+                    ${post.date}
+                </p>
+
+                <p>
+                    ${post.description}
+                </p>
+
+                <span class="card-arrow">→</span>
+
+            </div>
+
+        </a>
+    `).join("");
 }
 
 const categoryList = document.getElementById("category-list");
@@ -45,35 +96,58 @@ if (categoryList) {
         });
         // HTMLを作る
         categoryDetails.innerHTML = `
-            <summary>${category}</summary>
-            <ul>
-                ${areaList}
-            </ul>
-        `;
+    <summary>
+        <i class="${category === "国内" ? "fa-solid fa-house" : "fa-solid fa-globe"}"></i>
+        ${category}
+    </summary>
+    <ul>
+        ${areaList}
+    </ul>
+`;
         // Categoryの中に追加
         categoryList.appendChild(categoryDetails);
     });
 }
 
 const tripList = document.getElementById("trip-list");
+
 if (tripList) {
-    const prefecture =
-        document.body.dataset.prefecture;
-    const filteredPosts = posts.filter(
-        post => post.areas.includes(prefecture)
-    );
+
+    const prefecture = document.body.dataset.prefecture;
+
+    // areaページなら、その地域の記事だけ表示
+    // Travel Notesページなら、すべての記事を表示
+    const filteredPosts = prefecture
+        ? posts.filter(post => post.areas.includes(prefecture))
+        : posts;
+
     filteredPosts.forEach(post => {
         tripList.innerHTML += `
-        <a href="${post.url}" class="trip-card">
-            <div class="trip-content">
+            <a href="${post.url}" class="trip-card">
+
                 <img src="${post.image}" alt="${post.title}">
-                <p class="trip-date">
-                    ${post.number}<br>
-                    ${post.date}<br>
-                    ${post.title}
-                </p>
-            </div>
-        </a>
+
+                <div class="trip-content">
+
+                    <p class="trip-category">
+                        ${post.category} ・ ${post.areas.join("・")}
+                    </p>
+
+                    <h2>${post.title}</h2>
+
+                    <p class="trip-date">
+                        ${post.date}
+                    </p>
+
+                    <p>
+                        ${post.description}
+                    </p>
+
+                    <span class="card-arrow">→</span>
+
+                </div>
+
+            </a>
         `;
     });
 }
