@@ -1,375 +1,287 @@
+/* ====================
+        基本設定
+ ==================== */
 *{box-sizing: border-box;}
+body {margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fcfbf6;
+      color: #3f3a36;}
+h2 {color: #555; font-size: 30px;}
+h3{color: #555; font-size: 25px;}
+p {font-size: 20px; color: #555;}
+main {width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;}
+nav {display: flex;
+     justify-content: center;
+     gap: 45px;
+     font-size: 16px;
+     letter-spacing: 2px;}
+nav a {color: #b94047;
+       text-decoration: none;
+       position: relative;
+       transition: 0.3s;}
+nav a:hover {color: #8f3037;}
+nav a::after {content: "";
+              position: absolute;
+              left: 0;
+              bottom: -6px;
+              width: 0;
+              height: 2px;
+              background: #b94047;
+              transition: width 0.3s;}
+nav a:hover::after {width: 100%;}
+article a:hover {color: #b94047;}
+.read-more {display: inline-block;
+            padding: 12px 25px;
+            background: #b94047;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;}
+.read-more:hover {background: #8f3037;}
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #fcfbf6;
-    color: #3f3a36;
-}
-
-h1 {
-    margin: 10px 0;
-    color: #b94047;
-    font-size: 42px;
-    letter-spacing: 3px;
-}
-
-h2 {color: #555;
-    font-size: 30px;}
-    
-h3{color: #555;
-   font-size: 25px;}
-
-p {font-size: 20px;
-   color: #555;}
-
+/* 記事本文関連 */
 article > p {text-align: left;}
-
 .post-navigation{display: flex;
                  justify-content: space-between;
                  width: 80%;
                  margin: 60px auto;}
 .next-only{justify-content: flex-end;}
 
+/* Trip Info関連 */
+.trip-info {position: relative;
+            width: 90%;
+            max-width: 350px;
+            margin: 80px auto;
+            padding: 40px 30px 30px;
+            background: #fffdf8;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);}
+.masking-tape {position: absolute;
+               top: -12px;
+               left: 50%;
+               transform: translateX(-50%) rotate(-4deg);
+               width: 100px;
+               height: 28px;
+               background: rgba(255, 230, 150, 0.75);
+               border-radius: 3px;}
+
 /* 写真関連 */   
 img {width: 49%;
      border-radius: 12px;}
-
 .wide-photo{width:100%;
             max-width:1000px;
             display:block;
             margin: 0px auto;
             border-radius:12px;} 
-
 .article-image{width:100%;
                max-width:700px;
                display:block;
                margin:30px auto;
                border-radius:12px;}
 
-header {
-    width: 100%;
-    padding: 25px 20px;
-    background-color: #fcfbf5;
-    border-bottom: 1px solid #e2d8d2;
-}
-/* =========================
-   Header
-========================= */
+/* ヘッダー */               
+header {width: 100%;
+        padding: 25px 20px;
+        background-color: #fcfbf5;}
+.header-inner {width: 90%;
+               max-width: 1100px;
+               margin: 0 auto;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               gap: 30px;}
+.site-title {display: flex;
+             align-items: center;
+             gap: 8px;
+             color: #b94047;
+             text-decoration: none;
+             font-family: "Yomogi", cursive;
+             font-size: 32px;
+             font-weight: 600;
+             letter-spacing: 2px;}
+.title-text {display: flex;
+             flex-direction: column;
+             line-height: 1.1;}
+.title-main {font-size: 32px;
+             letter-spacing: 2px;}
+.title-sub {margin-top: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;}
+.plane {font-size: 22px;
+        display: inline-block;
+        transform: rotate(-8deg);}
+.header-inner nav {display: flex;
+                   align-items: center;
+                   gap: 30px;}
+.hero-photo img {width: 100%;
+                 height: 100%;
+                 object-fit: cover;
+                 border-radius: 0;}
 
-.header-inner {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* ====================
+          Home 
+ ==================== */
+.home-layout {display: flex;
+              align-items: flex-start;
+              gap: 40px;
+              text-align: left;
+              width: 90%;
+              max-width: 1700px;
+              margin: 50px auto;
+              padding: 0;}
+.home-sidebar {width: 240px;
+               flex-shrink: 0;
+               padding: 30px 25px;
+               background: #fcfbf5;
+               border: 1px solid #e7e2d8;
+               border-radius: 4px;
+               box-shadow: 0 3px 10px rgba(80, 60, 50, 0.06);}
+.home-main {flex: 1; min-width: 0;}
 
-    gap: 30px;
-}
+/* Home Latest note */
+.latest article {width: 100%;
+                 max-width: 1000px;
+                 margin: 0 auto;
+                 padding: 30px;
+                 border-radius: 12px;
+                 background: #fffefe;
+                 border: 1px solid #e7e2d8;
+                 box-shadow: 0 5px 18px rgba(80, 60, 50, 0.08);}
+.latest h2 {display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            color: #b94047;
+            font-size: 40px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            font-family: "Damion", cursive;}
+.latest h2::before,
+.latest h2::after {content: "";
+                   flex: 1;
+                   height: 1px;
+                   background: #d9b8b8;}
+.latest article h3 {color: #3f3a36;
+                    font-size: 24px;
+                    margin: 10px 0 15px;}
+.latest article p {color: #666;
+                   line-height: 1.8;}
+.latest-content {display: flex;
+                 align-items: center;
+                 gap: 30px;
+                 text-align: left;}
+.latest-image {width: 35%;
+               flex-shrink: 0;}
+.latest-image img {width: 100%;
+                   height: auto;
+                   object-fit: contain;
+                   border-radius: 10px;}
+.latest-info {flex: 1;}
+.latest-number {display: inline-block;
+                margin: 0 0 10px;
+                padding: 5px 12px;
+                background: #f4dddd;
+                border-radius: 20px;
+                font-size: 14px;}
+.latest-date {margin: 0 0 15px;
+              color: #777;
+              font-size: 15px;}
+.latest-description {color: #666;
+                     line-height: 1.8;
+                     font-size: 16px;}
 
-.site-title {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* Home Travel notes */
+.home-notes > h2 {display: flex;
+                  align-items: center;
+                  gap: 20px;
+                  color: #b94047;
+                  font-size: 40px;
+                  font-weight: normal;
+                  letter-spacing: 1px;
+                  margin-bottom: 30px;
+                  font-family: "Damion", cursive;}
+.home-notes > h2::after {content: "";
+                         flex: 1;
+                         height: 1px;
+                         background: #d9b8b8;}
+#home-note-list {display: flex;
+                 gap: 25px;
+                 justify-content: flex-start;}
 
-    color: #b94047;
-    text-decoration: none;
 
-    font-family: "Yomogi", cursive;
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
+/* ====================
+   カードの共通デザイン
+ ==================== */
+.trip-card {display: block;
+            width: 31%;
+            background: #fffefe;
+            border: 1px solid #e7e2d8;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(80, 60, 50, 0.07);
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;}
+.trip-card:hover {transform: translateY(-4px);
+                  box-shadow: 0 8px 20px rgba(80, 60, 50, 0.12);}
+.trip-card img {width: calc(100% - 20px);
+                height: 170px;
+                object-fit: cover;
+                display: block;
+                margin: 10px auto 0;}
+.trip-content {padding:22px;
+               text-align:left;}
+.trip-content h2 {margin:8px 0 15px;
+                  font-size:20px;
+                  line-height:1.6;
+                  color:#3f3a36;
+                  font-weight:500;}
+.trip-category {margin:0;
+                color:#888;
+                font-size:14px;}
+.trip-date {color:#888;
+            margin-bottom:12px;
+            font-size:13px;}
+.trip-content > p:not(.trip-category):not(.trip-date) {color:#666;
+                                                       font-size:14px;
+                                                       line-height:1.7;}
 
-.title-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-}
-
-.title-main {
-    font-size: 32px;
-    letter-spacing: 2px;
-}
-
-.title-sub {
-    margin-top: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.plane {
-    font-size: 22px;
-    display: inline-block;
-    transform: rotate(-8deg);
-}
-
-.header-inner nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.hero-photo {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-}
-
-.hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-}
-
-/* =========================
-   Home Layout
-========================= */
-
-.home-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    text-align: left;
-    width: 90%;
-    max-width: 1700px;
-    margin: 50px auto;
-    padding: 0;
-}
-
-.home-sidebar {
-    width: 240px;
-    flex-shrink: 0;
-    padding: 30px 25px;
-    background: #fcfbf5;
-    border: 1px solid #e7e2d8;
-    border-radius: 4px;
-    box-shadow: 0 3px 10px rgba(80, 60, 50, 0.06);
-}
-
-.home-main {flex: 1;
-            min-width: 0;}
-
-.home-sidebar h2 {
-    margin: 0 0 15px;
-    color: #b94047;
-    font-size: 35px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    font-family: "Damion", cursive;
-}
-/* Archiveの上に区切り線 */
+/* ====================
+       サイドバー
+ ====================*/
+.home-sidebar h2 {margin: 0 0 15px;
+                  color: #b94047;
+                  font-size: 35px;
+                  font-weight: normal;
+                  letter-spacing: 1px;
+                  font-family: "Damion", cursive;}
 .home-sidebar h2:not(:first-child) {margin-top: 30px;
                                     padding-top: 25px;
                                     border-top: 1px solid #d9b8b8;}
-/* 国内・海外の文字 */
 .home-sidebar summary {font-size: 20px;
                        color: #555;
                        transition: 0.3s;}
 .home-sidebar summary:hover {color: #b94047;}
-
-.home-sidebar li {
-    margin: 7px 0;
-    font-size: 18px;
-}
-/* 家・地球アイコン */
+.home-sidebar li {margin: 7px 0; font-size: 18px;}
 .home-sidebar summary i {color: #b94047;
                          font-size: 20px;
                          margin-right: 8px;}
-/* 香川・滋賀・台湾など */
 .home-sidebar a {color: #555;
                  text-decoration: none;
                  transition: 0.3s;}
-/* マウスを乗せたとき */
 .home-sidebar a:hover {color: #b94047;}
-
-main {
-    width: 90%;
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-    font-size: 16px;
-    letter-spacing: 2px;
-}
-
-nav a {
-    color: #b94047;
-    text-decoration: none;
-    position: relative;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #8f3037;
-}
-
-article a:hover {
-    color: #b94047;
-}
-
-.latest article {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 12px;
-    background: #fffdf8;
-    border: 1px solid #e7e2d8;
-    box-shadow: 0 5px 18px rgba(80, 60, 50, 0.08);
-}
-
-.latest h2 {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 25px;
-    color: #b94047;
-    font-size: 40px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    font-family: "Damion", cursive;
-}
-
-.latest h2::before,
-.latest h2::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #d9b8b8;
-}
-
-.latest article h3 {
-    color: #3f3a36;
-    font-size: 24px;
-    margin: 10px 0 15px;
-}
-
-.latest article p {
-    color: #666;
-    line-height: 1.8;
-}
-
-.latest-content {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    text-align: left;
-}
-
-.latest-image {
-    width: 35%;
-    flex-shrink: 0;
-}
-
-.latest-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-.latest-info {flex: 1;}
-
-.latest-number {
-    display: inline-block;
-    margin: 0 0 10px;
-    padding: 5px 12px;
-    background: #f4dddd;
-    color: blue;
-    border-radius: 20px;
-    font-size: 14px;
-}
-
-.latest-info h3 {
-    margin: 5px 0 12px;
-    color: #3f3a36;
-    font-size: 24px;
-    line-height: 1.5;
-}
-
-.latest-date {
-    margin: 0 0 15px;
-    color: #777;
-    font-size: 15px;
-}
-
-.latest-description {
-    color: #666;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-
-.read-more {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #b94047;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.read-more:hover {
-    background: #8f3037;
-}
-
-/* Home - Travel Notes */
-.home-notes {margin-top: 60px;}
-.home-notes > h2 {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    color: #b94047;
-    font-size: 40px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    font-family: "Damion", cursive;
-}
-
-.home-notes > h2::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #d9b8b8;
-}
-
-#home-note-list {
-    display: flex;
-    gap: 25px;
-    justify-content: flex-start;
-}
-
-.card-arrow {
-    display: block;
-    margin-top: 15px;
-    text-align: right;
-    color: #b94047;
-    font-size: 22px;
-    transition: 0.3s;
-}
-
-.trip-card:hover .card-arrow {
-    transform: translateX(5px);
-}
 
 /* プルダウンバー */
 details{margin:20px 0;}
@@ -383,170 +295,321 @@ details ul{margin-top:15px;
 details li{margin:10px 0;}
 
 
-/* Trip Info関連 */
-.trip-info {position: relative;
-            width: 90%;
-            max-width: 350px;
-            margin: 80px auto;
-            padding: 40px 30px 30px;
+/* ====================
+        Profile
+ ====================*/
+.profile-layout {align-items: flex-start;
+                 gap: 40px;}
+.profile-main {flex: 1;
+               min-width: 0;
+               padding: 20px 0 40px;}
+.profile-main .section-title {display: flex;
+                              align-items: center;
+                              gap: 20px;
+                              margin: 0;
+                              color: #b94047;
+                              font-family: "Damion", cursive;
+                              font-size: 48px;
+                              font-weight: normal;
+                              line-height: 1.2;}
+.profile-main .section-title::before,
+.profile-main .section-title::after {content: "";
+                                     flex: 1;
+                                     height: 1px;
+                                     background: #dfb7b5;}
+.section-subtitle {margin: 5px 0 35px;
+                   color: #b94047;
+                   font-size: 12px;
+                   letter-spacing: 3px;
+                   text-align: center;}
+
+/* About me */
+.profile-intro {margin-bottom: 45px;}
+.profile-intro-content {display: grid;
+                        grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.5fr);
+                        align-items: center;
+                        gap: 45px;}
+
+/* 写真をポラロイド風に */
+.profile-photo-wrap {position: relative;
+                     padding: 12px 12px 0;
+                     background: #fffdf8;
+                     border: 1px solid #e8e2d8;
+                     border-radius: 3px;
+                     box-shadow: 0 4px 15px rgba(60, 45, 35, 0.08);
+                     transform: rotate(-3deg);}
+.profile-photo-wrap::before {content: "";
+                             position: absolute;
+                             top: -17px;
+                             left: 30%;
+                             width: 100px;
+                             height: 25px;
+                             background: rgba(225, 174, 172, 0.65);
+                             transform: rotate(-2deg);}
+.profile-photo {display: block;
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;}
+.hello-text {margin: 12px 0 8px;
+             color: #b94047;
+             font-family: "Damion", cursive;
+             font-size: 32px;
+             text-align: center;}
+
+/* 自己紹介文 */
+.profile-text {color: #625d58;
+               font-size: 15px;
+               line-height: 2.1;}
+.profile-greeting {margin-bottom: 10px;
+                   color: #b94047;
+                   font-size: 25px;
+                   letter-spacing: 1px;}
+
+/* 趣味のアイコン */
+.profile-hobbies {display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  margin-top: 25px;}
+.hobby-item {display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 4px;
+             color: #b94047;
+             text-align: center;}
+.hobby-item + .hobby-item {border-left: 1px solid #e8dfd9;}
+.hobby-item i {margin-bottom: 5px;font-size: 27px;}
+.hobby-item span {font-size: 14px;}
+.hobby-item small {color: #77716c;
+                   font-size: 12px;}
+.profile-text > p:not(.profile-greeting) {margin-top: 0;}
+
+/* My Travel */
+.my-travel {padding-top: 30px;
+            margin-top: 35px;
+            border-top: 1px solid #d9aaa8;}
+.my-travel-content {display: grid;
+                    grid-template-columns: 1fr 1.2fr;
+                    align-items: start;
+                    gap: 35px;
+                    margin-top: 5px;}
+.my-travel-text {padding-top: 100px;
+                 color: #625d58;
+                 font-size: 15px;
+                 line-height: 2.1;}
+.travel-quote {margin: 0 0 25px;
+               color: #b94047;
+               font-size: 25px;
+               letter-spacing: 2px;
+               line-height: 1.9;
+               text-align: center;}
+
+/* Trip Info */
+.trip-info {padding: 25px;
             background: #fffdf8;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);}
+            border: 1px solid #e8e2d8;
+            border-radius: 5px;
+            box-shadow: 0 3px 12px rgba(60, 45, 35, 0.05);}
+.trip-info h3 {margin: 0 0 20px;
+               padding-bottom: 10px;
+               border-bottom: 1px dashed #d9aaa8;
+               color: #b94047;
+               font-family: "Damion", cursive;
+               font-size: 27px;
+               font-weight: normal;}
+.trip-info-item {display: grid;
+                 grid-template-columns: 30px 1fr;
+                 gap: 15px;
+                 align-items: start;
+                 margin-top: 18px;}
+.trip-info-item i {padding-top: 3px;
+                   color: #b94047;
+                   font-size: 19px;}
+.trip-info-item strong {color: #b94047;
+                        font-size: 13px;
+                        font-weight: normal;}
+.trip-info-item p {margin: 3px 0 0;
+                   color: #625d58;
+                   font-size: 13px;
+                   line-height: 1.8;}
 
-.masking-tape {position: absolute;
-               top: -12px;
-               left: 50%;
-               transform: translateX(-50%) rotate(-4deg);
-               width: 100px;
-               height: 28px;
-               background: rgba(255, 230, 150, 0.75);
-               border-radius: 3px;}
+/* Travel Map */
+.travel-map {margin-top: 40px;
+             padding: 30px 20px;
+             background: #f8f6ef;
+             border: 1px solid #eee8dc;
+             border-radius: 5px;}
+.map-heading {display: flex;
+              flex-wrap: wrap;
+              align-items: baseline;
+              gap: 10px 20px;
+              margin-bottom: 25px;}
+.map-heading h2 {margin: 0;
+                 color: #b94047;
+                 font-family: "Damion", cursive;
+                 font-size: 40px;
+                 font-weight: normal;}
+.map-heading p {margin: 0;
+                color: #77716c;
+                font-size: 13px;}
+.map-grid {display: grid;
+           grid-template-columns: repeat(2, minmax(0, 1fr));
+           gap: 25px;}
+.map-card {padding: 20px;
+           background: #fffdf8;
+           border: 1px solid #e8e2d8;
+           border-radius: 5px;
+           box-shadow: 0 3px 10px rgba(60, 45, 35, 0.04);}
+.map-card h3 {margin: 0 0 15px;
+              color: #b94047;
+              font-family: "Damion", cursive;
+              font-size: 30px;
+              font-weight: normal;}
+.map-card .wide-photo {display: block;
+                       width: 100%;
+                       height: auto;}
+.map-card p {margin: 15px 0 0;
+             color: #77716c;
+             font-size: 12px;}
+.map-note {margin: 25px 0 0;
+           color: #77716c;
+           font-size: 12px;
+           line-height: 1.8;
+           text-align: center;}
 
-/* =========================
-   Travel Notes
-========================= */
-.travel-page{display:flex;gap:40px;align-items:flex-start;}
-/* ↓間の縦線 */
-.category{width:220px;padding-right:30px;border-right:1px solid #d9d3c8;}
-
-.notes{flex:1;padding-left:30px;}
-
-.notes img{width: 80%;border-radius: 12px;}
-
-.category details{margin:20px 0;}
-
-.category summary{
-    color: #555;
-    cursor:pointer;
-    font-weight:bold;
-    font-size:20px;}
-
-.category summary:hover{color: #b94047;}
-
-.category ul{list-style:none;padding-left:15px;}
-
-.category li{margin:10px 0;}
-
-.category a{color:#555;
-            text-decoration:none;
-            transition:0.3s;}
-
-.category a:hover{color:#b94047;}
-
-.time-label{display: inline-flex;
-            position: relative;
-            margin: 35px 0px 20px;
-            padding: 12px 35px;
-            justify-content: center;
-            align-items: center;   /* ← 縦方向の中央揃え */
-
-    /* 方眼紙 */
-    background-color: #b94047;
-    background-image:
-        linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px);
-    background-size: 16px 16px;
-    box-shadow: 3px 4px 8px rgba(0,0,0,.2);}
-
-.time-label span{font-size: 1.4rem;
-                 font-weight: 400;
-                 color: white;}
+/* Closing Message */
+.profile-closing {display: grid;
+                  grid-template-columns: 1fr 1.3fr auto;
+                  align-items: center;
+                  gap: 25px;
+                  padding: 30px 5px;
+                  margin-top: 25px;
+                  border-top: 1px solid #dfb7b5;}
+.closing-illustration {display: flex;
+                       align-items: center;
+                       gap: 12px;
+                       color: #b94047;}
+.closing-illustration .fa-earth-americas {font-size: 38px;}
+.closing-illustration span {font-family: "Damion", cursive;
+                            font-size: 21px;
+                            line-height: 1.2;}
+.closing-illustration .fa-plane {font-size: 18px;}
+.closing-text {color: #625d58;
+               font-size: 13px;
+               line-height: 2;}
+.signature {margin: 0;
+            color: #b94047;
+            font-family: "Damion", cursive;
+            font-size: 30px;
+            transform: rotate(-5deg);}
 
 
-/*カテゴリー内のカード*/
-.trip-card {
-    display: block;
-    width: 31%;
-    margin: 0;
-    background: #fff;
-    border: 1px solid #e7e2d8;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(80, 60, 50, 0.07);
-    transition: 0.3s;
-    text-decoration: none;
-    color: inherit;
-}
-.trip-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(80, 60, 50, 0.12);
-}
-.trip-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
-.trip-content {
-    padding:22px;
-    text-align:left;
-}
+/* ====================
+     Travel Notes
+==================== */
+/* カテゴリー全体を縦に並べる */
+.notes #trip-list {display: block; width: 100%;}
+.notes-category {width: 100%;
+                 margin: 0 0 50px;}
+/* カテゴリー見出し */
+.notes-category-heading {display: flex;
+                         align-items: center;
+                         gap: 20px;
+                         margin-bottom: 22px;}
+.notes-category-title {display: flex;
+                       align-items: center;
+                       gap: 15px;
+                       flex-shrink: 0;
+                       color: #b94047;}
+.notes-category-title i {font-size: 25px;}
+.notes-category-title h2 {margin: 0;
+                          color: #b94047;
+                          font-size: 32px;
+                          font-weight: normal;}
+.notes-category-title span {font-family: "Damion", cursive;
+                            font-size: 27px;}
+/* 見出しの横線 */
+.notes-category-heading::after {content: "";
+                                flex: 1;
+                                height: 1px;
+                                background: #d9b8b8;
+                                min-width: 10px;}
+/* 「すべて読む」リンク */
+.notes-all-link {order: 1;
+                 flex-shrink: 0;
+                 color: #b94047;
+                 font-size: 13px;
+                 text-decoration: none;
+                 border-bottom: 1px solid #d9b8b8;
+                 padding-bottom: 5px;
+                 transition: color 0.3s;
+                 margin-right: 30px;}
+.notes-all-link:hover {color: #8f3037;}
 
-.trip-content h2 {
-    margin:8px 0 15px;
-    font-size:20px;
-    line-height:1.6;
-    color:#3f3a36;
-    font-weight:500;
-}
+/* 記事カードを横並びにする */
+.notes-card-list {display: grid;
+                  grid-template-columns: repeat(3, minmax(0, 1fr));
+                  width: 100%;
+                  justify-items: center;}
 
-.trip-category {
-    margin:0;
-    color:#888;
-    font-size:14px;
-}
+/* カード全体 */
+.notes-card-list .trip-card {width: 88%;
+                             box-sizing: border-box;}
 
-.trip-date {
-    color:#888;
-    margin-bottom:12px;
-    font-size:13px;
-}
+/* Travel Notesのカード画像 */
+.notes-card-list .trip-card img {width: 85%;
+                                 height: 200px;
+                                 object-fit: cover;
+                                 display: block;
+                                 margin: 23px auto 0;}
 
-.trip-content > p:not(.trip-category):not(.trip-date) {
-    color:#666;
-    font-size:14px;
-    line-height:1.7;
-}
-#trip-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin: 40px auto;
-}
+/* カード内の記事情報 */                                 
+.notes-card-list .trip-content h3 {margin: 8px 0 15px;
+                                   font-size: 18px;
+                                   line-height: 1.6;
+                                   color: #3f3a36;
+                                   font-weight: 500;}
+.notes-card-list .notes-card .trip-content {flex: 1;
+                                            min-width: 0;
+                                            padding:30px 50px;
+                                            text-align: left;}
+.notes-card-list .trip-category {margin: 0 0 8px;
+                                 color: #88817b;
+                                 font-size: 12px;}
+.notes-card-list .trip-date {margin: 0 0 10px;
+                             color: #88817b;
+                             font-size: 12px;}
+.notes-card-list .notes-description {margin: 0;
+                                     color: #484542;
+                                     font-size: 13px;
+                                     line-height: 1.8;}
 
-#archive-posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 50px auto;
-}
-#archive-posts .trip-card {
-    width: 400px;
-    margin: 0;
-}
-#archive-posts .trip-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
+/* 雑記の記事がない場合 */
+.notes-empty {position: relative;
+              padding: 35px 20px;
+              text-align: center;
+              background: #FFFEFB;
+              border: 1px solid #e7e2d8;
+              border-radius: 8px;
+              width: 98%;}
+.notes-empty i {color: #b94047;
+                font-size: 28px;}
+.notes-empty p {margin: 12px 0 5px;
+                color: #625d58;
+                font-size: 16px;}
+.notes-empty span {color: #88817b;
+                   font-size: 13px;}
 
-#area-posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 50px auto;
-}
-#area-posts .trip-card {
-    width: 400px;
-    margin: 0;
-}
-#area-posts .trip-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
+/* カテゴリー別一覧から戻るリンク */
+.notes-back-link {display: inline-block;
+                  margin-top: 25px;
+                  color: #b94047;
+                  font-size: 14px;
+                  text-decoration: none;
+                  border-bottom: 1px solid #d9b8b8;
+                  padding-bottom: 5px;}
+/* すべてのカテゴリーに戻る：ホバー時 */
+.notes-back-link:hover {color: #8f3037;}
+
+
 
 /*スマホ画面表示設定*/
 @media screen and (max-width: 768px) 

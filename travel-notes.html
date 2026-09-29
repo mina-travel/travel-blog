@@ -3,53 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel notes｜ミナの旅記録ノート</title>
+    <title>ホーム｜ミナの旅記録ノート</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
     <header>
-      <h1>ミナの旅記録ノート</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="travel-notes.html">Travel Notes</a>
-      </nav>
-    </header>
+    <div class="header-inner">
 
-<main class="travel-page">
-    <main class="travel-page">
+        <a href="index.html" class="site-title">
+    <span class="plane">✈︎</span>
 
-    <aside class="category">
+    <span class="title-text">
+        <span class="title-main">ミナの旅記録ノート</span>
+        <span class="title-sub">Travel Blog</span>
+    </span>
+</a>
 
-        <h2>Category</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="travel-notes.html">Travel Notes</a>
+        </nav>
 
-        <div id="category-list">
-            <!-- JavaScriptでカテゴリーを自動生成 -->
-        </div>
+    </div>
+</header>
+<div class="hero-photo">
+    <img src="images/header.png" alt="旅の風景">
+</div>
 
-        <h2>Archive</h2>
+    
+        <!-- カテゴリー別の記事一覧 -->
+        <section class="notes">
 
-        <div id="archive-list">
-            <!-- JavaScriptで年月アーカイブを自動生成 -->
-        </div>
+            <div id="trip-list">
+                <!-- JavaScriptでカテゴリー別に記事を自動生成 -->
+            </div>
 
-    </aside>
+        </section>
+
+    </main>
 
 
-    <section class="notes">
+    <!-- JavaScript -->
+    <script src="posts.js"></script>
+    <script src="script.js"></script>
 
-        <h2>Featured Posts</h2>
-
-        <div id="trip-list">
-            <!-- JavaScriptで旅行ノートを自動生成 -->
-        </div>
-
-    </section>
-
-</main>
- <script src="posts.js"></script>
- <script src="script.js"></script>
 </body>
 </html>

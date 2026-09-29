@@ -3,39 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プロフィール｜ミナの旅記録ノート</title>
-
+    <title>ホーム｜ミナの旅記録ノート</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
     <header>
-    <h1>ミナの旅記録ノート</h1>
+        <div class="header-inner">
+            <a href="index.html" class="site-title">
+                <span class="plane">✈︎</span>
+                <span class="title-text">
+                    <span class="title-main">ミナの旅記録ノート</span>
+                    <span class="title-sub">Travel Blog</span>
+                </span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="profile.html" class="active">Profile</a>
+                <a href="travel-notes.html">Travel Notes</a>
+            </nav>
+        </div>
+    </header>
+    <div class="hero-photo">
+        <img src="images/header.png" alt="旅の風景">
+    </div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="travel-notes.html">Travel Notes</a>
-    </nav>
-     </header>
+    <main class="home-layout profile-layout">
+        <aside class="home-sidebar">
+            <h2>Category</h2>
+            <div id="category-list">
+                <!-- JavaScriptで自動生成 -->
+            </div>
+            <h2>Archive</h2>
+            <div id="archive-list">
+                <!-- JavaScriptで自動生成 -->
+            </div>
+        </aside>
 
- <main>
-    <h2>プロフィール</h2><br>
-    <script src="script.js"></script>
-    <img src="images/profile.jpg" alt="旅行"><br><br>
-    <p>旅行が大好きな大学2年生<br>
-       プログラミング勉強中<br>
-       旅行記録をまとめていきます！</p>
-    <p>＃圧倒的アウトドア派　＃enfp　＃旅好き　＃山登り</p><br>
+        <div class="profile-main">
+            <section class="profile-intro">
+                <h2 class="section-title">
+                    <span>Profile</span>
+                </h2>
+                <p class="section-subtitle">ABOUT ME</p>
+                <div class="profile-intro-content">
+                    <!-- プロフィール写真 -->
+                    <div class="profile-photo-wrap">
+                        <img src="images/profile.jpg" alt="旅先でのプロフィール写真" class="profile-photo">
+                        <p class="hello-text">Hello! ✈</p>
+                    </div>
+                    <div class="profile-text">
+                        <p class="profile-greeting">
+                            はじめまして、ミナです！
+                        </p>
+                        <p>
+                            旅とグルメと、きれいな景色が好きです。<br>
+                            大学生のうちに、いろいろな国や地域を訪れて、<br>
+                            たくさんの文化や人に出会いたいと思っています。<br>
+                            このブログでは、旅先での思い出や感じたことを、<br>
+                            ノートに書き留めるように記録していきます。<br><br>
+                        </p>
+                        <div class="profile-hobbies">
+                           <div class="hobby-item">
+                             <i class="fa-solid fa-plane"></i>
+                             <span>旅行</span>
+                           </div>
 
-    <section class="travel-map">
-    <h2>Travel Map</h2>
-    <h3>World</h3>
-    <img src="images/map-maker-world-1.png" class="wide-photo" alt="世界地図"><br>
-    <h3>Japan</h3>
-    <img src="images/map_maker_japan-1.png" class="wide-photo" alt="日本地図"><br>
-    <p>※このマップは、本ブログに記録している旅先をまとめたものです。<br>これまでに訪れたすべての場所ではありません。</p><br>
- </section>
- </main>
+                           <div class="hobby-item">
+                             <i class="fa-solid fa-utensils"></i>
+                             <span>グルメ</span>
+                           </div>
+
+                           <div class="hobby-item">
+                             <i class="fa-solid fa-mountain"></i>
+                             <span>登山</span>
+                           </div>
+
+                           <div class="hobby-item">
+                             <i class="fa-solid fa-camera"></i>
+                             <span>写真</span>
+                           </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-travel">
+                <h2 class="section-title">
+                    <span>My Travel</span>
+                </h2>
+                <div class="my-travel-content">
+                    <div class="my-travel-text">
+                        <p class="travel-quote">
+                            “ まだ見ぬ景色を見に行きたい ”
+                        </p>
+                        <p>
+                            国内はもちろん、海外にもたくさん行って、<br>
+                            その土地ならではのグルメや文化、<br>
+                            素敵な景色を楽しむのが好きです。<br>
+                            これからも、いろいろな場所に出かけて<br>
+                            旅の記録を増やしていきたいです。
+                        </p>
+
+                    </div>
+
+                    <div class="trip-info">
+
+                        <h3>Trip Info</h3>
+
+                        <div class="trip-info-item">
+                            <i class="fa-solid fa-plane"></i>
+                            <div>
+                                <strong>好きな旅行スタイル</strong>
+                                <p>ひとり旅・友達との旅行<br>ノープランで旅行するのも好き</p>
+                            </div>
+                        </div>
+
+                        <div class="trip-info-item">
+                            <i class="fa-solid fa-utensils"></i>
+                            <div>
+                                <strong>好きな食べ物</strong>
+                                <p>ご当地グルメ・スイーツ(究極の甘党です)</p>
+                            </div>
+                        </div>
+
+                        <div class="trip-info-item">
+                            <i class="fa-solid fa-heart"></i>
+                            <div>
+                                <strong>好きなこと</strong>
+                                <p>新しい景色を見ること！<br>圧倒的アウトドア派！</p>
+                            </div>
+                        </div>
+
+                        <div class="trip-info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <strong>行きたい場所</strong>
+                                <p>ヨーロッパ・北欧・南極</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- 03 Travel Map -->
+            <section class="travel-map">
+
+                <div class="map-heading">
+                    <h2>Travel Map</h2>
+                    <p>これまでに訪れた場所。まだまだ行きたいところがたくさん！</p>
+                </div>
+
+                <div class="map-grid">
+                    <div class="map-card">
+                        <h3>World</h3> 
+                        <img src="images/map-maker-world-1.png" alt="世界地図" class="wide-photo">
+                        <p>訪れた国・地域</p>
+                    </div>
+                    <div class="map-card">
+                        <h3>Japan</h3>
+                        <img src="images/map_maker_japan-1.png" alt="日本地図" class="wide-photo">
+                        <p>訪れた県</p>
+                    </div>
+                </div>
+                <p class="map-note">
+                    ※このマップは、本ブログに記録している旅先をまとめたものです。<br>
+                    これまでに訪れたすべての場所ではありません。
+                </p>
+            </section>
+            <!-- 04 Closing Message -->
+            <section class="profile-closing">
+
+                <div class="closing-illustration">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span>Let's travel<br>together!</span>
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+                <div class="closing-text">
+                    これからも、旅を通して見つけた<br>
+                    好きなもの・ことをこのブログに綴っていきます。<br>
+                    よろしくお願いします！
+                </div>
+                <p class="signature">Mina</p>
+            </section>
+        </div>
+    </main>
+ <script src="posts.js"></script>
+ <script src="script.js"></script>
 </body>
 </html>

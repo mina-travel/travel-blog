@@ -1,65 +1,45 @@
 const latestNote = document.getElementById("latest-note");
-
 if (latestNote) {
     const latest = posts[posts.length - 1];
-
     latestNote.innerHTML = `
         <div class="latest-content">
-
             <div class="latest-image">
                 <img src="${latest.image}" alt="${latest.title}">
             </div>
-
             <div class="latest-info">
                 <p class="latest-number">${latest.number}</p>
                 <h3>${latest.title}</h3>
                 <p class="latest-date">${latest.date}</p>
                 <p class="latest-description">${latest.description}</p>
-
                 <a href="${latest.url}" class="read-more">
                     Read Note →
                 </a>
             </div>
-
         </div>
     `;
 }
 
 const homeNoteList = document.getElementById("home-note-list");
-
 if (homeNoteList) {
-
     const latest = posts[posts.length - 1];
-
     const previousPosts = posts
         .slice(-4, -1)
         .reverse();
-
     homeNoteList.innerHTML = previousPosts.map(post => `
         <a href="${post.url}" class="trip-card">
-
             <img src="${post.image}" alt="${post.title}">
-
             <div class="trip-content">
-
                 <p class="trip-category">
                     ${post.category} ・ ${post.areas.join("・")}
                 </p>
-
                 <h2>${post.title}</h2>
-
                 <p class="trip-date">
                     ${post.date}
                 </p>
-
                 <p>
                     ${post.description}
                 </p>
-
-                <span class="card-arrow">→</span>
-
             </div>
-
         </a>
     `).join("");
 }
@@ -110,45 +90,102 @@ if (categoryList) {
 }
 
 const tripList = document.getElementById("trip-list");
-
 if (tripList) {
+    const params = new URLSearchParams(window.location.search);
+    const selectedCategory = params.get("category");
+    // 表示するカテゴリー
+    const categories = [
+        {name: "国内",
+         english: "Japan",
+         icon: "fa-solid fa-house"},
+        {name: "海外",
+         english: "Overseas",
+         icon: "fa-solid fa-globe"},
+        {name: "雑記",
+         english: "Miscellaneous",
+         icon: "fa-regular fa-bookmark"}];
+    // カテゴリーを選択している場合は、そのカテゴリーだけ表示
+    const displayCategories = selectedCategory
+        ? categories.filter(category =>
+            category.name === selectedCategory
+        )
+        : categories;
+    displayCategories.forEach(category => {
+        // カテゴリーに属する記事を取得
+        let categoryPosts = posts.filter(post =>
+            post.category === category.name
+        );
+        // 通常表示では最新3件、カテゴリー選択時は全件
+        categoryPosts = categoryPosts.reverse();
+        if (!selectedCategory) {
+            categoryPosts = categoryPosts.slice(0, 3);
+        }
 
-    const prefecture = document.body.dataset.prefecture;
+        // 記事カードを作成
+const cards = categoryPosts.map(post => `
+    <a href="${post.url}" class="trip-card notes-card">
+        <img src="${post.image}" alt="${post.title}">
+            <div class="trip-content">
+                <p class="trip-category">
+                    ${post.category} ・ ${post.areas.join("・")}
+                </p>
+                <h3>${post.title}</h3>
+                <p class="trip-date">
+                    ${post.date}
+                </p>
+                <p class="notes-description">
+                    ${post.description}
+                </p>
+            </div>
+        </a>
+    `).join("");
 
-    // areaページなら、その地域の記事だけ表示
-    // Travel Notesページなら、すべての記事を表示
-    const filteredPosts = prefecture
-        ? posts.filter(post => post.areas.includes(prefecture))
-        : posts;
-
-    filteredPosts.forEach(post => {
-        tripList.innerHTML += `
-            <a href="${post.url}" class="trip-card">
-
-                <img src="${post.image}" alt="${post.title}">
-
-                <div class="trip-content">
-
-                    <p class="trip-category">
-                        ${post.category} ・ ${post.areas.join("・")}
-                    </p>
-
-                    <h2>${post.title}</h2>
-
-                    <p class="trip-date">
-                        ${post.date}
-                    </p>
-
-                    <p>
-                        ${post.description}
-                    </p>
-
-                    <span class="card-arrow">→</span>
-
+        // カテゴリー全体を作成
+        const section = document.createElement("section");
+        section.className = "notes-category";
+        section.innerHTML = `
+            <div class="notes-category-heading">
+                <div class="notes-category-title">
+                    <i class="${category.icon}"></i>
+                    <h2>${category.name}</h2>
+                    <span>${category.english}</span>
                 </div>
-
+                ${
+    category.name !== "雑記" &&
+    !new URLSearchParams(window.location.search).has("category")
+        ? `
+            <a class="notes-all-link" href="travel-notes.html?category=${encodeURIComponent(category.name)}">
+                記録をすべて読む
+                <span>→</span>
             </a>
+        `
+        : ""
+}
+            </div>
+            ${categoryPosts.length > 0
+                    ? `
+                        <div class="notes-card-list">
+                            ${cards}
+                        </div>
+                    `
+                    : `
+                        <div class="notes-empty">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <p>旅の記録を、少しずつ。</p>
+                            <span>記事を準備中です。</span>
+                        </div>
+                    `
+            }
+            ${selectedCategory
+                    ? `
+                        <a class="notes-back-link" href="travel-notes.html">
+                            ← すべてのカテゴリーに戻る
+                        </a>
+                    `
+                    : ""
+            }
         `;
+        tripList.appendChild(section);
     });
 }
 
