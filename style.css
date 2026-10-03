@@ -5,15 +5,21 @@
 body {margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
+      text-align: left;
       background-color: #fcfbf6;
       color: #3f3a36;}
-h2 {color: #555; font-size: 30px;}
+h2 {font-size: 38px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #3f3a36;
+    text-align: center;}
 h3{color: #555; font-size: 25px;}
-p {font-size: 20px; color: #555;}
+p {min-width: 0;
+   color: #3f3a36;
+   font-size: 19px;
+   line-height: 2;}
 main {width: 90%;
       max-width: 1100px;
-      margin: 50px auto;
       padding: 0;
       background: transparent;
       border: none;
@@ -48,56 +54,75 @@ article a:hover {color: #b94047;}
 .read-more:hover {background: #8f3037;}
 
 /* 記事本文関連 */
-article > p {text-align: left;}
+.article-layout {display: grid;
+                 grid-template-columns: minmax(0, 1fr) 240px;
+                 gap: 40px;
+                 width: 90%;
+                 max-width: 1400px;
+                 margin: 50px 100px;
+                 align-items: start;}
 .post-navigation{display: flex;
                  justify-content: space-between;
                  width: 80%;
                  margin: 60px auto;}
 .next-only{justify-content: flex-end;}
+.article-intro {display: grid;
+                grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.9fr);
+                align-items: center;
+                gap: 28px;}
+.time-label {color: #b94047;
+             font-size: 30px;
+             font-weight: 400;
+             display: flex;
+             align-items: center;
+             margin: 45px 0 35px;
+             padding: 18px 28px;
+             border-top: 1px solid #b94047;
+             border-bottom: 1px solid #b94047;}
 
 /* Trip Info関連 */
 .trip-info {position: relative;
             width: 90%;
-            max-width: 350px;
+            max-width: none;
             margin: 80px auto;
-            padding: 40px 30px 30px;
-            background: #fffdf8;
-            border-radius: 8px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);}
+            padding: 20px 30px 20px;
+            background: #fcfbf6;
+            border: 1px solid #b94047;
+            border-radius: 8px;}
 .masking-tape {position: absolute;
                top: -12px;
                left: 50%;
                transform: translateX(-50%) rotate(-4deg);
                width: 100px;
                height: 28px;
-               background: rgba(255, 230, 150, 0.75);
+               background: rgba(212, 104, 104, 0.75);
                border-radius: 3px;}
+.trip-info i{color: #b94047;}
+.trip-info p{font-size: 15px;}
+.trip-info h2{font-size: 30px;
+              line-height: 0.8;}
 
 /* 写真関連 */   
-img {width: 49%;
-     border-radius: 12px;}
+img {width: 49%;}
 .wide-photo{width:100%;
-            max-width:1000px;
-            display:block;
-            margin: 0px auto;
-            border-radius:12px;} 
+            max-width:760px;
+            height: auto;
+            display:start;
+            margin: 24px auto;} 
 .article-image{width:100%;
-               max-width:700px;
+               max-width:none;
                display:block;
-               margin:30px auto;
-               border-radius:12px;}
+               margin:30px auto;}
 
 /* ヘッダー */               
 header {width: 100%;
         padding: 25px 20px;
         background-color: #fcfbf5;}
-.header-inner {width: 90%;
-               max-width: 1100px;
+.header-inner {max-width: 1100px;
                margin: 0 auto;
                display: flex;
                align-items: center;
-               justify-content: space-between;
-               gap: 30px;}
+               justify-content: space-between;}
 .site-title {display: flex;
              align-items: center;
              gap: 8px;
@@ -261,12 +286,14 @@ header {width: 100%;
 /* ====================
        サイドバー
  ====================*/
+.home-sidebar {background-color: #fffdf8;}
 .home-sidebar h2 {margin: 0 0 15px;
                   color: #b94047;
                   font-size: 35px;
                   font-weight: normal;
                   letter-spacing: 1px;
-                  font-family: "Damion", cursive;}
+                  font-family: "Damion", cursive;
+                  text-align: left;}
 .home-sidebar h2:not(:first-child) {margin-top: 30px;
                                     padding-top: 25px;
                                     border-top: 1px solid #d9b8b8;}
@@ -359,11 +386,13 @@ details li{margin:10px 0;}
 /* 自己紹介文 */
 .profile-text {color: #625d58;
                font-size: 15px;
-               line-height: 2.1;}
+               line-height: 2.1;
+               text-align: center;}
 .profile-greeting {margin-bottom: 10px;
                    color: #b94047;
                    font-size: 25px;
-                   letter-spacing: 1px;}
+                   letter-spacing: 1px;
+                   text-align: center;}
 
 /* 趣味のアイコン */
 .profile-hobbies {display: grid;
@@ -389,6 +418,7 @@ details li{margin:10px 0;}
 .my-travel-content {display: grid;
                     grid-template-columns: 1fr 1.2fr;
                     align-items: start;
+                    text-align: center;
                     gap: 35px;
                     margin-top: 5px;}
 .my-travel-text {padding-top: 100px;
@@ -402,31 +432,36 @@ details li{margin:10px 0;}
                line-height: 1.9;
                text-align: center;}
 
-/* Trip Info */
-.trip-info {padding: 25px;
-            background: #fffdf8;
-            border: 1px solid #e8e2d8;
-            border-radius: 5px;
-            box-shadow: 0 3px 12px rgba(60, 45, 35, 0.05);}
-.trip-info h3 {margin: 0 0 20px;
+/* Information */
+.trip-information {width: 75%;
+    box-sizing: border-box;
+    padding: 10px 0px 30px 40px;
+    margin: 50px auto;
+
+    background: #fffdf8;
+    border: 1px solid #e7e2d8;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(63, 58, 54, 0.04);
+    text-align: left;}
+.trip-informatnon h3 {margin: 0 0 20px;
                padding-bottom: 10px;
                border-bottom: 1px dashed #d9aaa8;
                color: #b94047;
                font-family: "Damion", cursive;
                font-size: 27px;
                font-weight: normal;}
-.trip-info-item {display: grid;
+.trip-information-item {display: grid;
                  grid-template-columns: 30px 1fr;
                  gap: 15px;
                  align-items: start;
                  margin-top: 18px;}
-.trip-info-item i {padding-top: 3px;
+.trip-information-item i {padding-top: 3px;
                    color: #b94047;
                    font-size: 19px;}
-.trip-info-item strong {color: #b94047;
+.trip-information-item strong {color: #b94047;
                         font-size: 13px;
                         font-weight: normal;}
-.trip-info-item p {margin: 3px 0 0;
+.trip-information-item p {margin: 3px 0 0;
                    color: #625d58;
                    font-size: 13px;
                    line-height: 1.8;}
@@ -506,7 +541,9 @@ details li{margin:10px 0;}
      Travel Notes
 ==================== */
 /* カテゴリー全体を縦に並べる */
-.notes #trip-list {display: block; width: 100%;}
+.notes #trip-list {display: block; 
+                   width: 100%;
+                   padding: 50px;}
 .notes-category {width: 100%;
                  margin: 0 0 50px;}
 /* カテゴリー見出し */
@@ -540,8 +577,7 @@ details li{margin:10px 0;}
                  text-decoration: none;
                  border-bottom: 1px solid #d9b8b8;
                  padding-bottom: 5px;
-                 transition: color 0.3s;
-                 margin-right: 30px;}
+                 transition: color 0.3s;}
 .notes-all-link:hover {color: #8f3037;}
 
 /* 記事カードを横並びにする */
@@ -551,8 +587,9 @@ details li{margin:10px 0;}
                   justify-items: center;}
 
 /* カード全体 */
-.notes-card-list .trip-card {width: 88%;
-                             box-sizing: border-box;}
+.notes-card-list .trip-card {width: 96%;
+                             box-sizing: border-box;
+                             margin: 10px;}
 
 /* Travel Notesのカード画像 */
 .notes-card-list .trip-card img {width: 85%;
@@ -584,12 +621,12 @@ details li{margin:10px 0;}
 
 /* 雑記の記事がない場合 */
 .notes-empty {position: relative;
-              padding: 35px 20px;
+              padding: 35px;
               text-align: center;
               background: #FFFEFB;
               border: 1px solid #e7e2d8;
               border-radius: 8px;
-              width: 98%;}
+              width: 100%;}
 .notes-empty i {color: #b94047;
                 font-size: 28px;}
 .notes-empty p {margin: 12px 0 5px;
@@ -608,6 +645,80 @@ details li{margin:10px 0;}
                   padding-bottom: 5px;}
 /* すべてのカテゴリーに戻る：ホバー時 */
 .notes-back-link:hover {color: #8f3037;}
+
+
+/* ====================
+  カテゴリー・アーカイブ
+ ==================== */
+/* 地域別ページの記事一覧 */
+#area-posts {display: grid;
+             grid-template-columns: repeat(3, minmax(0, 1fr));
+             gap: 24px;
+             width: 92%;
+             max-width: 1200px;
+             margin: 30px auto 50px;
+             box-sizing: border-box;}
+
+/* 地域別ページのカード */
+#area-posts .trip-card {width: 100%;
+                        margin: 0;
+                        box-sizing: border-box;}
+
+/* 地域別ページのタイトル */
+#area-title {width: fit-content;
+             text-align: center;
+             font-size: 35px;
+             font-weight: 500;
+             letter-spacing: 0.15em;
+             color: #b94047;
+             margin: 30px auto 30px;
+             padding-bottom: 10px;
+             position: relative;}
+
+/* 年月別ページの記事一覧 */
+#archive-posts {display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 24px;
+                width: 92%;
+                max-width: 1200px;
+                margin: 30px auto 50px;
+                box-sizing: border-box;}
+
+/* 年月別ページのカード */
+#archive-posts .trip-card {width: 100%;
+                           margin: 0;
+                           box-sizing: border-box;}
+
+/* 年月別ページのタイトル */
+#archive-title {width: fit-content;
+                text-align: center;
+                font-size: 35px;
+                font-weight: 500;
+                letter-spacing: 0.15em;
+                color: #b94047;
+                margin: 30px auto 30px;
+                padding-bottom: 10px;
+                position: relative;}
+
+/* タイトル下の飾り線 */
+#area-title::after {width: 100%;
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    background: #b94047;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);}
+#archive-title::after {width: 100%;
+                       content: "";
+                       display: block;
+                       height: 2px;
+                       background: #b94047;
+                       position: absolute;
+                       bottom: 0;
+                       left: 50%;
+                       transform: translateX(-50%);}
 
 
 
