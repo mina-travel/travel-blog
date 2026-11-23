@@ -3,34 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-
+    <title>【川越日帰り旅行】「小江戸川越で食べ歩き！」</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
     <header>
-     <h1>ミナの旅記録ノート</h1>
+    <div class="header-inner">
 
-     <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="travel-notes.html">Travel Notes</a>
-     </nav>
-    </header>
+        <a href="index.html" class="site-title">
+    <span class="plane">✈︎</span>
 
- <main>
+    <span class="title-text">
+        <span class="title-main">ミナの旅記録ノート</span>
+        <span class="title-sub">Travel Blog</span>
+    </span>
+</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="travel-notes.html">Travel Notes</a>
+        </nav>
+
+    </div>
+</header>
+<div class="hero-photo">
+    <img src="images/header.png" alt="旅の風景">
+</div>
+
+<main class="article-layout">
+
   <article>
   <h2>【川越日帰り旅行】<br>「小江戸川越で食べ歩き！」</h2>
-        <img src="images/kawagoe-1.jpg" alt="川越" class="article-image">
+      <div class="article-intro">  
+        <img src="images/kawagoe-1.jpg" alt="埼玉" class="article-image">
 
   <section class="trip-info">
     <div class="masking-tape"></div>
     <h2>Trip Info</h2>
-    <p><strong>Place</strong>　埼玉県</p>
-    <p><strong>Date</strong>　2025.09.29</p>
-    <p><strong>Transport</strong>　電車</p>
+    <p><i class="fa-solid fa-location-dot"></i> Place<br>埼玉県</p>
+    <p><i class="fa-solid fa-calendar"></i> Date<br>2025.09.29</p>
+    <p><i class="fa-solid fa-plane"></i> Transport<br>電車</p>
   </section>
+  </div>
   <p>皆様こんにちは。ミナです。<br>
     実は台湾旅行の最終日に、親友から川越に行かないかとお誘いがありました。<br>
     台湾から帰った次の日に川越旅行というハードスケジュールでしたが、まぁいけるだろ！とノリで行ってきました笑。<br>
@@ -108,7 +129,7 @@
   <p>私が食べたのは「バニラミルク」と「狭山抹茶&アマレーナ」<br>
      親友のフレーバーは見た目がほぼ同じですが、白い方が違うフレーバーだった気がします。</p><br>
 <hr>
-　<p>今回の旅記録は以上です。<br>
+  <p>今回の旅記録は以上です。<br>
      ここまでご覧いただきありがとうございます。<br>
      次回のブログも是非見てください♪<br><br>
      ではまた！</p>
@@ -123,5 +144,17 @@
 </div>
 
 </article>
+<aside class="home-sidebar">
+        <h2>Category</h2>
+        <div id="category-list">
+            <!-- JavaScriptで自動生成 -->
+        </div>
+        <h2>Archive</h2>
+        <div id="archive-list">
+            <!-- JavaScriptで自動生成 -->
+        </div>
+</aside>
 </main>
+<script src="posts.js"></script>
+<script src="script.js"></script>
 </body>

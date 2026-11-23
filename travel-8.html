@@ -3,34 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-
+    <title>【滋賀女子旅 Day1】「名古屋に寄り道して滋賀へ！」</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
     <header>
-     <h1>ミナの旅記録ノート</h1>
+    <div class="header-inner">
 
-     <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="travel-notes.html">Travel Notes</a>
-     </nav>
-    </header>
+        <a href="index.html" class="site-title">
+    <span class="plane">✈︎</span>
 
- <main>
+    <span class="title-text">
+        <span class="title-main">ミナの旅記録ノート</span>
+        <span class="title-sub">Travel Blog</span>
+    </span>
+</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="travel-notes.html">Travel Notes</a>
+        </nav>
+
+    </div>
+</header>
+<div class="hero-photo">
+    <img src="images/header.png" alt="旅の風景">
+</div>
+
+<main class="article-layout">
+
   <article>
   <h2>【滋賀女子旅 Day1】<br>「名古屋に寄り道して滋賀へ！」</h2>
+   <div class="article-intro"> 
         <img src="images/shiga-1.jpg" alt="滋賀" class="article-image">
 
-  <section class="trip-info">
+   <section class="trip-info">
     <div class="masking-tape"></div>
     <h2>Trip Info</h2>
-    <p><strong>Place</strong>　滋賀</p>
-    <p><strong>Date</strong>　2026.02.07〜09</p>
-    <p><strong>Transport</strong>　電車・バス</p>
+    <p><i class="fa-solid fa-location-dot"></i> Place<br>滋賀県</p>
+    <p><i class="fa-solid fa-calendar"></i> Date<br>2026.02.07〜09</p>
+    <p><i class="fa-solid fa-plane"></i> Transport<br>バス・電車・徒歩</p>
   </section>
+  </div>
+
   <p>皆様こんにちは。ミナです。<br>
     今回は大学の友達と滋賀旅行に行きました。<br>
     二人ともまだ行ったことのない県に行こう！という話になって選んだ旅先ですが、今まで行っていなかったことを後悔するくらい素敵な場所でした。</p><br>
@@ -101,7 +123,7 @@
     リーズナブルかつ快適に過ごすことができました。<br><br>
     この後はすぐにお風呂に入り就寝です。</p><br>
 <hr>
-　<p>今回の旅記録は以上です。<br>
+  <p>今回の旅記録は以上です。<br>
      ここまでご覧いただきありがとうございます。<br>
      次回のブログも是非見てください♪<br><br>
      ではまた！</p>
@@ -114,7 +136,18 @@
       Next Note →
     </a>
 </div>
-
 </article>
+<aside class="home-sidebar">
+        <h2>Category</h2>
+        <div id="category-list">
+            <!-- JavaScriptで自動生成 -->
+        </div>
+        <h2>Archive</h2>
+        <div id="archive-list">
+            <!-- JavaScriptで自動生成 -->
+        </div>
+</aside>
 </main>
+<script src="posts.js"></script>
+<script src="script.js"></script>
 </body>
